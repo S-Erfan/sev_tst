@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: vazir;
+  src: url("../public/fonts/Vazir-Medium.woff2");
+}
+
+:root {
+  --transitionMain: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --rmdp-primary-purple: #7c3aed !important;
+  --rmdp-secondary-purple: #a855f7 !important;
+  --rmdp-shadow-purple: #8b5cf6 !important;
+  --rmdp-today-purple: #9333ea88 !important;
+  --rmdp-hover-purple: #9333ea !important;
+  --rmdp-deselect-purple: #9333ea !important;
+  --toastify-font-family: vazir !important;
+  --screen-chat-size: 174px;
+}
+
+@layer components {
+  .btn-main {
+    @apply transition duration-150 ease-in h-10 px-6 min-w-full rounded-md border border-slate-400 text-slate-900 hover:bg-violet-500 hover:text-teal-50 shadow-lg;
+  }
+  .btn-sec {
+    @apply transition duration-150 bg-emerald-700 min-w-full text-slate-50 ease-in h-10 px-6 rounded-md border border-emerald-900 flex justify-center items-center shadow-md shadow-stone-700/60  hover:bg-zinc-50  hover:text-black;
+  }
+  .navLink {
+    @apply w-full py-3 px-1 rounded-lg flex flex-row items-center gap-2 transition duration-300 hover:bg-neutral-300 text-base;
+  }
+  .input-main {
+    @apply relative py-3 px-3 w-full bg-white rounded shadow-md shadow-neutral-400/50 outline-none text-sm text-gray-700 placeholder-gray-400 transition-all duration-150 ease-in-out focus:bg-white focus:!ring-2 focus:!ring-violet-500 focus:!shadow-violet-700;
+  }
+  .input-chat {
+    @apply py-2 px-3 w-full bg-transparent rounded outline-none text-base text-neutral-800 placeholder-neutral-600;
+  }
+  .select-main {
+    @apply relative py-3 px-3 w-full bg-white rounded shadow-md shadow-neutral-400/50 outline-none text-sm text-gray-700 transition-all duration-150 ease-in-out;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  direction: rtl;
+  font-family: vazir;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.show_3_line {
+  min-height: 60px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.show_1_line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.latestBlogsSlider {
+  padding-bottom: 3rem !important;
+  /* padding-left: 3rem;
+  padding-right: 3rem; */
+}
+
+.fullScreen {
+  min-height: calc(100vh - 116px);
+}
+
+.chat_section {
+  height: calc(100svh - 60px);
+  overflow: hidden;
+}
+
+.heigth_screen_chat {
+  height: calc(100svh - var(--screen-chat-size));
+}
+
+.customScroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 transparent;
+}
+
+/*? --for firefox scrollbar-- ?*/
+.customScroll:-webkit-scrollbar {
+  width: 8px;
+}
+
+.customScroll:-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.customScroll:-webkit-scrollbar-thumb {
+  background-color: #8b5cf6;
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+
+.customScroll::-webkit-scrollbar {
+  width: 8px;
+  background: none;
+}
+
+.customScroll::-webkit-scrollbar-thumb {
+  background: rgb(139 92 246);
+  border-radius: 8px;
+}
+
+.customScrollDark {
+  scrollbar-color: #414141 transparent;
+  scrollbar-width: thin;
+}
+
+.customScrollDark::-webkit-scrollbar {
+  width: 3px;
+  height: 4px;
+  background: none;
+}
+
+.customScrollDark::-webkit-scrollbar-thumb {
+  background: #414141;
+  border-radius: 2px;
+}
+
+.Toastify {
+  font-family: vazir;
+}
+
+.bg_screen_wallpaper {
+  background-image: url("../public/images/CC.jpg") !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+.glass_bg_el {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.4px);
+  -webkit-backdrop-filter: blur(10.4px);
+  background: rgba(255, 255, 255, 0.74);
+  border-radius: 16px;
+  backdrop-filter: blur(10.4px);
+  -webkit-backdrop-filter: blur(10.4px);
+}
+.ql-container.ql-snow {
+  border: none !important;
+}
+.ql-editor {
+  text-align: right !important;
+}
+.ql-picker-label {
+  padding-right: 18px !important;
+}
+
+@media (max-width: 420px) {
+  .rmdp-mobile .rmdp-header,
+  .rmdp-mobile .rmdp-panel-header {
+    height: 40px !important;
+  }
+}

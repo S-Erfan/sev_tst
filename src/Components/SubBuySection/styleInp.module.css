@@ -1,0 +1,4 @@
+.container > input[type="radio"]:checked + span {
+  display: block;
+  opacity: 1;
+}
